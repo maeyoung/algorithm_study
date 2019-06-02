@@ -17,14 +17,14 @@
 
 def solution(n, lost, reserve):
     answer = 0
-    max = 0
+    max = 0     # 빌려서 체육을 할 수 있게 된 학생들 
 
     for i in lost:
-        if reserve.count(i):      # 여벌 체육복을 가져왔지만 도난 당한 경우 reserve에서 제거 
+        if reserve.count(i) == 1:      # 여벌 체육복을 가져왔지만 도난 당한 경우 reserve에서 제거 
             reserve.remove(i)
             lost.remove(i)
 
-    for num in lost:  # 체육복을 도난 당했지만 여벌 체육복을 빌릴 수 있으면 lost에서 제거 
+    for num in lost:        # 체육복을 도난 당했지만 여벌 체육복을 빌릴 수 있으면 lost에서 제거 
 
         if reserve.count(num) == 1:     # 내가 여벌을 갖고 있는 경우 
             max += 1

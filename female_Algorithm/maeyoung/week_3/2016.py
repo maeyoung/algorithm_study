@@ -13,7 +13,7 @@ def solution(a, b):
     day = 4
 
     month = 1
-    while month != a :  # 이번달 쩐까지는 전체 일 수를 다 더해준다 
+    while month != a :  # 이번달 전까지는 전체 일 수를 다 더해준다 
         if month == 2:  # 29일 까지 있는 달 
             day += 29
 
@@ -23,9 +23,9 @@ def solution(a, b):
         if month == 4 or month == 6 or month == 9 or month == 11:   # 30일 까지 있는 달 
             day += 30
         
-        month += 1
+        month += 1      # 다음 달로 넘어가기 
 
-    day = day + b
+    day = day + b   # 이번달 날짜 더해주기
 
     answer = week[day % 7] 
         
